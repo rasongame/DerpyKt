@@ -30,7 +30,7 @@ object Launcher {
             Files.createDirectory(minecraftHome.resolve("natives"))
         }
     }
-
+    suspend fun getAssets(){}
     suspend fun getReleaseInfo(url: String): VersionManifest {
         val response: HttpResponse = this.httpClient.get(url)
         return format.decodeFromString(response.readText())
