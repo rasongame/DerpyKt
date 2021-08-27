@@ -35,7 +35,7 @@ object LauncherWindow: JFrame() {
         openSettingsButton.addActionListener { contentPane = settingsPanel; validate(); repaint() }
         launch.addActionListener {
             GlobalScope.launch {
-                Launcher.downloadClient(Launcher.getReleaseInfo(Launcher.versionsManifest.versions[0].url))
+                Downloader.downloadClient(Downloader.getReleaseInfo(Launcher.versionsManifest.versions[0].url))
             }
         }
         launchPanel.add(nickname)
